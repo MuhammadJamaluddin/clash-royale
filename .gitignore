@@ -1,0 +1,24 @@
+## MAC files ##
+.DS_Store
+
+## NPM ##
+npm
+npm-debug.log
+node_modules/
+
+pids
+*.pid
+logs
+*.log
+
+# Transpiled directory
+public/build
+
+# AWS
+.elasticbeanstalk/
+.ebextensions/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
