@@ -25,7 +25,10 @@ class App extends React.Component {
 
 App.propTypes = {
   store: PropTypes.shape({
-    cardsData: PropTypes.array.isRequired,
+    dispatch: PropTypes.func.isRequired,
+    getState: PropTypes.func.isRequired,
+    replaceReducer: PropTypes.func.isRequired,
+    subscribe: PropTypes.func.isRequired,
   }).isRequired,
 };
 
