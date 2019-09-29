@@ -1,4 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
+import PropTypes from 'prop-types';
 import getCardsData from '../../actions/getCardsData';
 
 class App extends React.Component {
@@ -20,5 +22,11 @@ class App extends React.Component {
     );
   }
 }
+
+App.propTypes = {
+  store: PropTypes.shape({
+    cardsData: PropTypes.array.isRequired,
+  }).isRequired,
+};
 
 export default App;
