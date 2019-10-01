@@ -11,7 +11,6 @@ app.use(express.static('public'));
 app.get('/cardsData', (req, res) => {
   axios.get('http://www.clashapi.xyz/api/cards')
     .then((response) => {
-      console.log(response.data);
       res.send(response.data);
     })
     .catch((error) => {
