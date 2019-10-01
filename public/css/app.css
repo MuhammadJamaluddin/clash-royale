@@ -35,3 +35,8 @@ img:hover {
   border-style: dashed;
   border-radius: 0.8em;
 }
+
+#send {
+  margin-top: 5%;
+  margin-left: 45%;
+}
