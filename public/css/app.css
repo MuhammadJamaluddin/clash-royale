@@ -2,3 +2,36 @@
 body {
   background: #ffffff url('../img/geometry2.png');
 }
+
+/*
+ * Styles for the deck of cards
+ */
+
+#deck {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2em;
+  place-items: center/center;
+  place-content: space-evenly/space-evenly;
+  max-width: 60%;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  margin: 0 auto;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+img {
+  width: 100%;
+  max-height: 100%;
+}
+
+img:hover {
+  opacity: 0.5;
+}
+
+.notSelected {
+  background: #ffffff;
+  border-style: dashed;
+  border-radius: 0.8em;
+}
