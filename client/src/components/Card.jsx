@@ -1,20 +1,49 @@
 import React from 'react';
+import InfoIcon from '@material-ui/icons/Info';
+import DeleteIcon from '@material-ui/icons/Delete';
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import InformationModal from './InformationModal';
+import SelectMode from './SelectMode';
 
-const Card = ({ selected, card }) => {
+const Card = ({ selected, card, removeCard, toggleModal, toggleSelectModeModal }) => {
+  const [selectModeOpen, setSelectMode] = React.useState(false);
+
+
   const remove = () => {
-
+    removeCard(card._id);
   };
 
-  const add = () => {
-
+  const openSelectMode = () => {
+    setSelectMode(true);
   };
 
-  const showInfo = () => {
+  const closeSelectMode = () => {
+    setSelectMode(false);
+  };
 
+  const handleOpen = () => {
+    toggleModal(card._id);
   };
 
   return (
-    selected ? <img alt="a card showing" src={`http://www.clashapi.xyz/images/cards/${card.idName}.png`} /> : <div className="notSelected" />
+    selected ? (
+      <div className="card">
+        <img alt="a card showing" src={`http://www.clashapi.xyz/images/cards/${card.idName}.png`} />
+        <InfoIcon className="infoIcon" fontSize="large" onClick={handleOpen} />
+        <DeleteIcon className="deleteIcon" fontSize="large" onClick={() => remove()} />
+        <InformationModal card={card} open={card.open} toggleModal={toggleModal} />
+      </div>
+    ) : (
+      <div className="notSelected">
+        <AddCircleIcon className="addIcon" onClick={openSelectMode} />
+        <SelectMode
+          card={card}
+          selectModeOpen={selectModeOpen}
+          closeSelectMode={closeSelectMode}
+          toggleSelectModeModal={toggleSelectModeModal}
+        />
+      </div>
+    )
   );
 };
 
