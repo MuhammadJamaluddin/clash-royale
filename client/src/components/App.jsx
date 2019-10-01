@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import getCardsData from '../../actions/getCardsData';
+import DeckBuilderContainer from '../../containers/DeckBuilderContainer';
 
 class App extends React.Component {
   constructor(props) {
@@ -17,7 +18,7 @@ class App extends React.Component {
     return (
       <div>
         {/* <Statistics /> */}
-        {/* <DeckBuilder /> */}
+        <DeckBuilderContainer />
       </div>
     );
   }
