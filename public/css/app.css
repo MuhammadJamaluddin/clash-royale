@@ -3,6 +3,13 @@ html {
   overflow-y: scroll;
 }
 
+/* Attribute: https://stackoverflow.com/a/30348277/5929034 */
+/* for chrome hidden scrollbar  */
+/* to prevent shifting body content when the modal is toggled   */
+::-webkit-scrollbar {
+  width: 0px !important;
+}
+
 /* Background pattern from Subtle Patterns */
 body {
   background: #ffffff url('../img/geometry2.png');
@@ -28,17 +35,18 @@ body {
 
 img {
   width: 100%;
-  max-height: 100%;
 }
 
-img:hover {
-  opacity: 0.5;
+.card:hover {
+  opacity: 0.1;
 }
 
 .notSelected {
   background: #ffffff;
   border-style: dashed;
   border-radius: 0.8em;
+  min-height: 14em;
+  position: relative;
 }
 
 #send, #randomize {
@@ -52,4 +60,34 @@ img:hover {
 
 #send {
   margin-top: 1%;
+}
+
+.card {
+  position: relative;
+}
+
+.infoIcon, .deleteIcon {
+  position: absolute;
+  visibility: hidden;
+  left: 45%;
+}
+
+.infoIcon {
+  top: 20%;
+}
+
+.deleteIcon {
+  top: 60%;
+}
+
+.card:hover .infoIcon,
+.card:hover .deleteIcon {
+  visibility: visible;
+  z-index: 10;
+}
+
+.addIcon {
+  position: absolute;
+  top: 45%;
+  left: 45%;
 }
