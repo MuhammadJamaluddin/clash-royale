@@ -1,15 +1,15 @@
 import React from 'react';
-import Card from './Card';
+import CardContainer from '../../containers/cardContainer';
 import RandomizeButton from './randomizeButton';
 import ShareButton from './ShareButton';
 
 const DeckBuilder = ({ cardsData, currentDeck, generateRandomDeck}) => {
   const deck = [];
   for (let i = 0; i < 8; i += 1) {
-    if (currentDeck[i] === undefined) {
-      deck.push(<Card selected={false} key={i} />);
+    if (currentDeck[i] === undefined || currentDeck[i].state === 'notSelected') {
+      deck.push(<CardContainer selected={false} key={i} />);
     } else {
-      deck.push(<Card selected key={currentDeck[i].idName} card={currentDeck[i]} />);
+      deck.push(<CardContainer selected key={currentDeck[i].idName} card={currentDeck[i]} />);
     }
   }
 
