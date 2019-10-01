@@ -1,11 +1,14 @@
-import changeCardsData from './cardsData';
+import storeCardsData from './storeCardsData';
+import generateRandomDeck from './generateRandomDeck';
 
-const getCardsData = () => (dispatch) => {
+const getCardsData = () => (dispatch, getState) => {
   fetch('/cardsData')
     .then((res) => res.json())
     .then((res) => {
-      console.log(res);
-      dispatch(changeCardsData(res));
+      dispatch(storeCardsData(res));
+
+      const { cardsData } = getState();
+      dispatch(generateRandomDeck(cardsData));
     })
     .catch((err) => console.log(err));
 };
