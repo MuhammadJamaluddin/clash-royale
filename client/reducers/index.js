@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import cardsDataReducer from './storeCardsData';
-import generateRandomDeckReducer from './generateRandomDeck';
+import handleDeckState from './handleDeckState';
 
 const rootReducer = combineReducers({
   cardsData: cardsDataReducer,
-  currentDeck: generateRandomDeckReducer,
+  currentDeck: handleDeckState,
 });
 
 export default rootReducer;
