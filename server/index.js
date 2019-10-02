@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -16,4 +17,11 @@ app.get('/cardsData', (req, res) => {
     .catch((error) => {
       console.log(error);
     });
+});
+
+const jsonParser = bodyParser.json();
+app.post('/share', jsonParser, (req, res) => {
+  // Now that we access to the 8 cards, we can share it however we like...
+  console.log(req.body);
+  res.end();
 });

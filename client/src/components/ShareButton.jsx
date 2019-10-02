@@ -3,9 +3,14 @@ import Button from '@material-ui/core/Button';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import SendIcon from '@material-ui/icons/Send';
 
-const ShareButton = () => (
+const ShareButton = ({ shareCards, currentDeck }) => (
   <div>
-    <Button variant="contained" color="primary" id="send">
+    <Button
+      variant="contained"
+      color="primary"
+      id="send"
+      onClick={() => shareCards(currentDeck)}
+    >
       Share
       <SvgIcon>
         <SendIcon />
