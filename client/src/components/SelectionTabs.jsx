@@ -106,4 +106,16 @@ const selectionTabs = ({ cardsData, card }) => {
   );
 };
 
+selectionTabs.propTypes = {
+  cardsData: PropTypes.arrayOf(PropTypes.object).isRequired,
+  card: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    idName: PropTypes.string.isRequired,
+    rarity: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    elixirCost: PropTypes.number.isRequired,
+  }).isRequired,
+};
+
 export default selectionTabs;

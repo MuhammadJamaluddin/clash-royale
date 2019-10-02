@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
@@ -11,7 +12,7 @@ const levels = {
   Legendary: '9',
 };
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
     alignItems: 'center',
@@ -73,6 +74,20 @@ const InformationModal = ({ card, open, toggleModal }) => {
       </Modal>
     </div>
   );
+};
+
+InformationModal.propTypes = {
+  open: PropTypes.bool.isRequired,
+  card: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    idName: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    rarity: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    elixirCost: PropTypes.number.isRequired,
+  }).isRequired,
+  toggleModal: PropTypes.func.isRequired,
 };
 
 export default InformationModal;

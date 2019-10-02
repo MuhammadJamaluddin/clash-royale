@@ -1,11 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import InfoIcon from '@material-ui/icons/Info';
 import DeleteIcon from '@material-ui/icons/Delete';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
 import InformationModal from './InformationModal';
 import SelectModeContainer from '../../containers/SelectModeContainer';
 
-const Card = ({ selected, card, removeCard, toggleModal, toggleSelectModeModal }) => {
+const Card = ({
+  selected, card, removeCard, toggleModal, toggleSelectModeModal,
+}) => {
   const [selectModeOpen, setSelectMode] = React.useState(false);
 
 
@@ -46,5 +49,21 @@ const Card = ({ selected, card, removeCard, toggleModal, toggleSelectModeModal }
     )
   );
 };
+
+Card.propTypes = {
+  selected: PropTypes.bool.isRequired,
+  card: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    idName: PropTypes.string.isRequired,
+    rarity: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    elixirCost: PropTypes.number.isRequired,
+  }).isRequired,
+  removeCard: PropTypes.func.isRequired,
+  toggleModal: PropTypes.func.isRequired,
+  toggleSelectModeModal: PropTypes.func.isRequired,
+};
+
 
 export default Card;
