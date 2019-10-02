@@ -19,7 +19,7 @@ body {
  * Styles for the deck of cards
  */
 
-#deck {
+#mainDeck {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2em;
@@ -31,6 +31,14 @@ body {
   padding: 1.5em;
   border-radius: 10px;
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+#modalDeck {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2em;
+  place-items: center/center;
+  place-content: space-evenly/space-evenly;
 }
 
 img {
