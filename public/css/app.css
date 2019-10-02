@@ -99,3 +99,22 @@ img {
   top: 45%;
   left: 45%;
 }
+
+#hsbar {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 1em;
+  border: 2px solid black;
+  border-radius: 3em;
+}
+
+#statisticsHead {
+  text-align: center;
+}
+
+h3 {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 0.2em;
+}
