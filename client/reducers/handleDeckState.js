@@ -15,6 +15,11 @@ const handleDeckState = (previousState = [], action = {}) => {
       return previousState.map((card) => (
         (card._id === action.cardId) ? { ...card, open: !card.open } : card
       ));
+    case 'SET_CARD':
+      return previousState.map((card) => (
+        (card._id === action.cardsDetails.originalCardId)
+          ? { open: false, selectMode: false, ...action.cardsDetails.selectedCard } : card
+      ));
     default:
       return previousState;
   }
