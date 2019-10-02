@@ -11,7 +11,6 @@ const Card = ({
 }) => {
   const [selectModeOpen, setSelectMode] = React.useState(false);
 
-
   const remove = () => {
     removeCard(card._id);
   };

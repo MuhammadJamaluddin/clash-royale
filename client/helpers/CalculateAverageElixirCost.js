@@ -9,7 +9,6 @@ const CalculateAverageElixirCost = (cards) => {
     }
   }
 
-  console.log(totalElixirCost / cards.length);
   return Math.floor(totalElixirCost / cards.length);
 };
 
