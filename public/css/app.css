@@ -45,8 +45,8 @@ img {
   width: 100%;
 }
 
-.card:hover {
-  opacity: 0.1;
+.card:hover img {
+  opacity: 0.2;
 }
 
 .notSelected {
@@ -91,7 +91,6 @@ img {
 .card:hover .infoIcon,
 .card:hover .deleteIcon {
   visibility: visible;
-  z-index: 10;
 }
 
 .addIcon {
