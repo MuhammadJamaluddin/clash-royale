@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import PropTypes from 'prop-types';
+import StatisticsContainer from '../../containers/StatisticsContainer';
 import getCardsData from '../../actions/getCardsData';
 import DeckBuilderContainer from '../../containers/DeckBuilderContainer';
 
@@ -17,7 +18,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        {/* <Statistics /> */}
+        <StatisticsContainer />
         <DeckBuilderContainer />
       </div>
     );
