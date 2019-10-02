@@ -7,7 +7,7 @@ const DeckBuilder = ({ cardsData, currentDeck, generateRandomDeck}) => {
   const deck = [];
   for (let i = 0; i < 8; i += 1) {
     if (currentDeck[i] === undefined || currentDeck[i].state === 'notSelected') {
-      deck.push(<CardContainer selected={false} key={i} />);
+      deck.push(<CardContainer selected={false} card={currentDeck[i]} key={i} />);
     } else {
       deck.push(<CardContainer selected key={currentDeck[i].idName} card={currentDeck[i]} />);
     }
@@ -15,7 +15,7 @@ const DeckBuilder = ({ cardsData, currentDeck, generateRandomDeck}) => {
 
   return (
     <div>
-      <div id="deck">
+      <div id="mainDeck">
         {deck}
       </div>
       <RandomizeButton cardsData={cardsData} generateRandomDeck={generateRandomDeck} />
