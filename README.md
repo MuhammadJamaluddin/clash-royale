@@ -6,7 +6,7 @@
 * run `npm run build` to transpile the components
 * run `npm start` to start the server
 * open the browser & hit `localhost:3000` & Voila...
-* run `npm fun test` to initialize the tests
+* run `npm run test` to initialize the tests
 
 ## Design decisions & choices:
 
